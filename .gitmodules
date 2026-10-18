@@ -1,0 +1,3 @@
+[submodule ".agents/skills/skill-external-lib-sources"]
+	path = .agents/skills/skill-external-lib-sources
+	url = https://github.com/Dynastxu/skill-external-lib-sources.git
