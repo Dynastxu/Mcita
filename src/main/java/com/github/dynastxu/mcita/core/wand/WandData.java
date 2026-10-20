@@ -51,9 +51,9 @@ public record WandData(
 
     public static final Codec<WandData> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             RegistryFixedCodec.create(McitaRegistries.WAND).fieldOf("stats").forGetter(WandData::stats),
-            CARDS_CODEC.optionalFieldOf("cards", Map.<Integer, ActionCard>of()).forGetter(WandData::cards),
-            Codec.INT.listOf().optionalFieldOf("draw", List.<Integer>of()).forGetter(WandData::drawPile),
-            Codec.INT.listOf().optionalFieldOf("discard", List.<Integer>of()).forGetter(WandData::discardPile),
+            CARDS_CODEC.optionalFieldOf("cards", Map.of()).forGetter(WandData::cards),
+            Codec.INT.listOf().optionalFieldOf("draw", List.of()).forGetter(WandData::drawPile),
+            Codec.INT.listOf().optionalFieldOf("discard", List.of()).forGetter(WandData::discardPile),
             Codec.FLOAT.optionalFieldOf("mana", 0f).forGetter(WandData::mana),
             Codec.LONG.optionalFieldOf("last_mana_tick", 0L).forGetter(WandData::lastManaTick),
             Codec.LONG.optionalFieldOf("next_cast_tick", 0L).forGetter(WandData::nextCastTick),

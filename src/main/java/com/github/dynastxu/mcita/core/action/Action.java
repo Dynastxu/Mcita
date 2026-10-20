@@ -34,7 +34,7 @@ public record Action(
             Codec.INT.optionalFieldOf("mana", 10).forGetter(Action::manaDrain),
             Codec.INT.optionalFieldOf("max_uses", INFINITE_USES).forGetter(Action::maxUses),
             Codec.INT.optionalFieldOf("price", 0).forGetter(Action::price),
-            SpawnEntry.CODEC.listOf().optionalFieldOf("spawn", List.<SpawnEntry>of()).forGetter(Action::spawnTable),
+            SpawnEntry.CODEC.listOf().optionalFieldOf("spawn", List.of()).forGetter(Action::spawnTable),
             Identifier.CODEC.optionalFieldOf("sprite").forGetter(Action::sprite),
             Identifier.CODEC.optionalFieldOf("sprite_unidentified").forGetter(Action::spriteUnidentified),
             UsesLogic.CODEC.optionalFieldOf("uses_logic", UsesLogic.DEFAULT).forGetter(Action::usesLogic),

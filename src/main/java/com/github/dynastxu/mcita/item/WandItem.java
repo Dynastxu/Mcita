@@ -22,6 +22,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jspecify.annotations.NonNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,7 +53,7 @@ public class WandItem extends Item {
      * depend on the player firing once.
      */
     @Override
-    public void inventoryTick(ItemStack stack, ServerLevel level, Entity owner, EquipmentSlot slot) {
+    public void inventoryTick(@NonNull ItemStack stack, @NonNull ServerLevel level, @NonNull Entity owner, EquipmentSlot slot) {
         super.inventoryTick(stack, level, owner, slot);
         if (stack.has(ModDataComponents.WAND.get())) {
             return;
@@ -65,7 +66,7 @@ public class WandItem extends Item {
     }
 
     @Override
-    public Component getName(ItemStack stack) {
+    public @NonNull Component getName(ItemStack stack) {
         WandData data = stack.get(ModDataComponents.WAND.get());
         if (data != null) {
             String key = data.stats().value().cosmetic().nameKey();
@@ -77,7 +78,7 @@ public class WandItem extends Item {
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+    public @NonNull InteractionResult use(@NonNull Level level, @NonNull Player player, @NonNull InteractionHand hand) {
         if (!(level instanceof ServerLevel server)) {
             return InteractionResult.SUCCESS;
         }

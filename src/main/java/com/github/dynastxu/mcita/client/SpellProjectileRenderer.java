@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.rendertype.RenderTypes;
 import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
+import org.jspecify.annotations.NonNull;
 
 /**
  * Ported from NoitaCore's {@code TextureEntityRenderer}: a camera-facing quad using
@@ -25,12 +26,12 @@ public class SpellProjectileRenderer extends EntityRenderer<SpellProjectile, Spe
     }
 
     @Override
-    public SpellProjectileRenderState createRenderState() {
+    public @NonNull SpellProjectileRenderState createRenderState() {
         return new SpellProjectileRenderState();
     }
 
     @Override
-    public void extractRenderState(SpellProjectile entity, SpellProjectileRenderState state, float partialTick) {
+    public void extractRenderState(@NonNull SpellProjectile entity, @NonNull SpellProjectileRenderState state, float partialTick) {
         super.extractRenderState(entity, state, partialTick);
         ProjectileProfile profile = entity.getProfile();
         if (profile != null && profile.render().isPresent()) {

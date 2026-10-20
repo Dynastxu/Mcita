@@ -1,6 +1,5 @@
 package com.github.dynastxu.mcita.entity;
 
-import com.github.dynastxu.mcita.Mcita;
 import com.github.dynastxu.mcita.McitaRegistries;
 import com.github.dynastxu.mcita.core.action.ShotConfig;
 import com.github.dynastxu.mcita.core.action.ShotStat;
@@ -11,10 +10,8 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.Identifier;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -25,6 +22,7 @@ import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import org.jspecify.annotations.NonNull;
 
 /**
  * One generic projectile entity driven by a {@link ProjectileProfile}. The profile id
@@ -61,7 +59,7 @@ public class SpellProjectile extends Projectile {
                     this.profile = this.level().registryAccess()
                             .lookupOrThrow(McitaRegistries.PROJECTILE)
                             .get(identifier)
-                            .map(holder -> holder.value())
+                            .map(Holder.Reference::value)
                             .orElse(null);
                 }
             }
@@ -105,7 +103,7 @@ public class SpellProjectile extends Projectile {
     }
 
     @Override
-    protected void onHit(HitResult result) {
+    protected void onHit(@NonNull HitResult result) {
         super.onHit(result);
         if (this.level().isClientSide()) {
             return;
@@ -138,12 +136,12 @@ public class SpellProjectile extends Projectile {
     }
 
     @Override
-    public boolean hurtServer(ServerLevel level, DamageSource source, float damage) {
+    public boolean hurtServer(@NonNull ServerLevel level, @NonNull DamageSource source, float damage) {
         return false;
     }
 
     @Override
-    protected void readAdditionalSaveData(ValueInput input) {
+    protected void readAdditionalSaveData(@NonNull ValueInput input) {
         // Projectiles are short-lived; profiles are re-applied on spawn.
     }
 

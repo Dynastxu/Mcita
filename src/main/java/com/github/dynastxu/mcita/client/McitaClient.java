@@ -27,6 +27,9 @@ public final class McitaClient {
 
     @SubscribeEvent
     public static void registerScreens(RegisterMenuScreensEvent event) {
+        // 这里必须显式指定类型，否则会报错
+        // 但 IDEA 警告为显式类型实参可以推断，原因不明
+        //noinspection RedundantTypeArguments
         event.<WandMenu, WandScreen>register(ModMenuTypes.WAND.get(), WandScreen::new);
     }
 

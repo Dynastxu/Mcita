@@ -11,13 +11,10 @@ import net.minecraft.world.item.ItemStack;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
- * Slot view over {@link WandData#cards}. Ported from NoitaCore's WandContainer, but the
+ * Slot view over {@link WandData#cards()}. Ported from NoitaCore's WandContainer, but the
  * backing store is the new card map instead of an ItemStack list on the component.
  */
 public class WandContainer implements Container {
@@ -114,9 +111,7 @@ public class WandContainer implements Container {
 
     @Override
     public void clearContent() {
-        for (int i = 0; i < items.size(); i++) {
-            items.set(i, ItemStack.EMPTY);
-        }
+        Collections.fill(items, ItemStack.EMPTY);
         setChanged();
     }
 

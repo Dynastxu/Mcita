@@ -40,9 +40,9 @@ public record WandStats(
             Codec.FLOAT.optionalFieldOf("mana_max", 0f).forGetter(WandStats::manaMax),
             Codec.FLOAT.optionalFieldOf("mana_charge_speed", 0f).forGetter(WandStats::manaChargeSpeed),
             RegistryFixedCodec.create(McitaRegistries.ACTION).listOf()
-                    .optionalFieldOf("always_cast", List.<Holder<Action>>of()).forGetter(WandStats::alwaysCast),
+                    .optionalFieldOf("always_cast", List.of()).forGetter(WandStats::alwaysCast),
             Codec.unboundedMap(ShotStat.CODEC, Codec.FLOAT)
-                    .optionalFieldOf("shot_defaults", Map.<ShotStat, Float>of()).forGetter(WandStats::shotDefaults),
+                    .optionalFieldOf("shot_defaults", Map.of()).forGetter(WandStats::shotDefaults),
             WandCosmetic.CODEC.fieldOf("cosmetic").forGetter(WandStats::cosmetic)
     ).apply(instance, WandStats::new));
 }

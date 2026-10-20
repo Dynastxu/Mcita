@@ -76,7 +76,7 @@ public final class ShotConfig {
 
     public static final Codec<ShotConfig> CODEC = RecordCodecBuilder.create(instance -> instance.group(
             Codec.unboundedMap(ShotStat.CODEC, Codec.FLOAT)
-                    .optionalFieldOf("values", Map.<ShotStat, Float>of())
+                    .optionalFieldOf("values", Map.of())
                     .forGetter(ShotConfig::nonDefaultValues),
             Codec.BOOL.optionalFieldOf("friendly_fire", false).forGetter(ShotConfig::friendlyFire)
     ).apply(instance, ShotConfig::fromMap));
