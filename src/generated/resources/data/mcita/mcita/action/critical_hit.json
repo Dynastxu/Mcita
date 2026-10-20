@@ -1,0 +1,30 @@
+{
+  "type": "modifier",
+  "mana": 0,
+  "ops": [
+    {
+      "type": "draw_actions",
+      "count": 1
+    },
+    {
+      "type": "patch_shot",
+      "patch": {
+        "critical_chance": "+5.0",
+        "fire_rate_wait": "+3.3333333"
+      }
+    }
+  ],
+  "price": 150,
+  "spawn": [
+    {
+      "level": 1,
+      "weight": 1.0
+    },
+    {
+      "level": 2,
+      "weight": 1.0
+    }
+  ],
+  "sprite": "mcita:textures/item/spell_critical_hit",
+  "sprite_unidentified": "mcita:textures/item/spell_critical_hit"
+}

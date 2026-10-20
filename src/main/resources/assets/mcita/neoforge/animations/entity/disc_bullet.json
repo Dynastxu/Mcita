@@ -1,0 +1,30 @@
+{
+  "length": 0.25,
+  "animations": [
+    {
+      "bone": "bone",
+      "target": "rotation",
+      "keyframes": [
+        {
+          "timestamp": 0,
+          "target": [
+            0,
+            0,
+            0
+          ],
+          "interpolation": "linear"
+        },
+        {
+          "timestamp": 0.25,
+          "target": [
+            360,
+            0,
+            0
+          ],
+          "interpolation": "linear"
+        }
+      ]
+    }
+  ],
+  "loop": true
+}

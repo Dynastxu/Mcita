@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mcita:item/spell_layer_multicast",
+    "layer1": "mcita:item/spell_burst_2"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "mcita:font/type.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE721"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/mana_drain.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE722"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/cast_delay.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE723"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/spread.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE724"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/recharge.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE725"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/radius.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE726"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/speed.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE727"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/crit.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE728"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/projectile.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE729"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/uses.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE730"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/none.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE731"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/shuffle.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE732"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/spells_per_cast.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE733"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/mana.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE734"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/mana_charge.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE735"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/capacity.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE736"]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/explosion.png",
+      "ascent": 7,
+      "height": 9,
+      "chars": ["\uE737"]
+    }
+  ]
+}

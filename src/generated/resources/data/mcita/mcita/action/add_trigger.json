@@ -1,0 +1,22 @@
+{
+  "type": "other",
+  "ops": [
+    {
+      "type": "custom",
+      "behavior": "mcita:add_trigger"
+    }
+  ],
+  "price": 100,
+  "spawn": [
+    {
+      "level": 3,
+      "weight": 0.3
+    },
+    {
+      "level": 4,
+      "weight": 0.6
+    }
+  ],
+  "sprite": "mcita:textures/item/spell_light_bullet_trigger",
+  "sprite_unidentified": "mcita:textures/item/spell_light_bullet_trigger"
+}

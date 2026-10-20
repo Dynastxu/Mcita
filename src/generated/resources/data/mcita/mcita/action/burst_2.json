@@ -1,0 +1,24 @@
+{
+  "type": "draw_many",
+  "mana": 0,
+  "ops": [
+    {
+      "type": "draw_actions",
+      "count": 2,
+      "instant_reload": true
+    }
+  ],
+  "price": 140,
+  "spawn": [
+    {
+      "level": 0,
+      "weight": 0.8
+    },
+    {
+      "level": 1,
+      "weight": 0.8
+    }
+  ],
+  "sprite": "mcita:textures/item/spell_burst_2",
+  "sprite_unidentified": "mcita:textures/item/spell_burst_2"
+}

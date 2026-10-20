@@ -1,0 +1,24 @@
+{
+  "damage": {
+    "amount": 0.1
+  },
+  "explosion": {
+    "damage": 3.0,
+    "radius": 3.0
+  },
+  "lifetime": {
+    "random_ticks": 3.3333333,
+    "ticks": 66.666664
+  },
+  "motion": {
+    "air_friction": 1.2,
+    "friction": 0.98,
+    "gravity": 0.025,
+    "mass": 0.1,
+    "speed_max": 1.0,
+    "speed_min": 0.75
+  },
+  "render": {
+    "texture": "mcita:textures/entity/rubber_ball"
+  }
+}

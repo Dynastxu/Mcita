@@ -1,0 +1,38 @@
+{
+  "type": "projectile",
+  "mana": 25,
+  "max_uses": 3,
+  "ops": [
+    {
+      "type": "spawn_projectile",
+      "projectile": "mcita:bomb"
+    },
+    {
+      "type": "patch_shot",
+      "patch": {
+        "fire_rate_wait": "+33.333332"
+      }
+    },
+    {
+      "type": "add_recoil",
+      "amount": 23.0
+    }
+  ],
+  "price": 200,
+  "spawn": [
+    {
+      "level": 0,
+      "weight": 1.0
+    },
+    {
+      "level": 1,
+      "weight": 1.0
+    },
+    {
+      "level": 2,
+      "weight": 1.0
+    }
+  ],
+  "sprite": "mcita:textures/item/spell_nuke",
+  "sprite_unidentified": "mcita:textures/item/spell_nuke"
+}

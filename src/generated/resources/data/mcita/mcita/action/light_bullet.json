@@ -1,0 +1,36 @@
+{
+  "type": "projectile",
+  "mana": 5,
+  "ops": [
+    {
+      "type": "spawn_projectile",
+      "projectile": "mcita:light_bullet"
+    },
+    {
+      "type": "patch_shot",
+      "patch": {
+        "critical_chance": "+5.0",
+        "fire_rate_wait": "+1.0",
+        "screen_shake": "+0.5",
+        "spread_degrees": "-1.0"
+      }
+    }
+  ],
+  "price": 100,
+  "spawn": [
+    {
+      "level": 0,
+      "weight": 2.0
+    },
+    {
+      "level": 1,
+      "weight": 1.0
+    },
+    {
+      "level": 2,
+      "weight": 0.5
+    }
+  ],
+  "sprite": "mcita:textures/item/spell_light_bullet",
+  "sprite_unidentified": "mcita:textures/item/spell_light_bullet"
+}

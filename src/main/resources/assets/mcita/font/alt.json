@@ -1,0 +1,53 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "mcita:font/alt_uppercase.png",
+      "ascent": 6,
+      "height": 6,
+      "chars": [
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/alt_lowercase.png",
+      "ascent": 6,
+      "height": 6,
+      "chars": [
+        "abcdefghijklmnopqrstuvwxyz"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/alt_numbers.png",
+      "ascent": 6,
+      "height": 6,
+      "chars": [
+        "0123456789"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/alt_punct.png",
+      "ascent": 6,
+      "height": 6,
+      "chars": [
+        ",.?'"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "mcita:font/alt_symbols.png",
+      "ascent": 6,
+      "height": 6,
+      "chars": [
+        "!@#%&*()_+-=[]\\:;<>/"
+      ]
+    },
+    {
+      "type": "space",
+      "advances": {" ": 5}
+    }
+  ]
+}

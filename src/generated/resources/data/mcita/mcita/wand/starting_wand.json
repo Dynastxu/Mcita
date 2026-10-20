@@ -1,0 +1,21 @@
+{
+  "always_cast": [
+    "mcita:light_bullet",
+    "mcita:light_bullet"
+  ],
+  "cosmetic": {
+    "grip_x": 2.0,
+    "grip_y": 5.0,
+    "model": "mcita:item/wand_lc_sc_s",
+    "name": "wand.mcita.bolt_staff",
+    "tip_x": 21.0,
+    "tip_y": 5.0
+  },
+  "deck_capacity": 3,
+  "mana_charge_speed": 30.0,
+  "mana_max": 100.0,
+  "reload_ticks": 8.0,
+  "shot_defaults": {
+    "fire_rate_wait": 3.3333333
+  }
+}

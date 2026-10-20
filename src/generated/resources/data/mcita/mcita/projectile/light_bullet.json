@@ -1,0 +1,20 @@
+{
+  "damage": {
+    "amount": 0.12
+  },
+  "lifetime": {
+    "random_ticks": 2.3333333,
+    "ticks": 13.333333
+  },
+  "motion": {
+    "air_friction": 1.7,
+    "gravity": 0.025,
+    "mass": 0.04,
+    "speed_max": 2.125,
+    "speed_min": 1.875
+  },
+  "render": {
+    "additive": true,
+    "texture": "mcita:textures/entity/buckshot"
+  }
+}

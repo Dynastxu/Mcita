@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mcita:item/spell_layer_projectile",
+    "layer1": "mcita:item/spell_light_bullet"
+  }
+}

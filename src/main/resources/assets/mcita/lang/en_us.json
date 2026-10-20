@@ -1,0 +1,25 @@
+{
+  "itemGroup.mcita": "Mcita",
+  "item.mcita.action_card": "Spell Card",
+  "item.mcita.wand": "Wand",
+  "wand.mcita.bolt_staff": "Bolt staff",
+
+  "key.mcita.open_wand_gui": "Open wand",
+
+  "item.mcita.spell_light_bullet": "Spark Bolt",
+  "item.mcita.spell_bomb": "Bomb",
+  "item.mcita.spell_burst_2": "Double Spell",
+  "item.mcita.spell_critical_hit": "Critical Plus",
+  "item.mcita.spell_add_trigger": "Add Trigger",
+
+  "tooltip.mcita.always_casts": "Always Cast",
+  "tooltip.mcita.shuffle": "Shuffle",
+  "tooltip.mcita.spells_per_cast": "Spells/Cast",
+  "tooltip.mcita.cast_delay": "Cast Delay",
+  "tooltip.mcita.recharge_time": "Recharg. Time",
+  "tooltip.mcita.mana_max": "Mana max",
+  "tooltip.mcita.mana_charge_speed": "Mana Chg. Spd",
+  "tooltip.mcita.capacity": "Capacity",
+  "tooltip.mcita.spread": "Spread",
+  "tooltip.mcita.speed": "Speed"
+}

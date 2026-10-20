@@ -1,0 +1,25 @@
+{
+  "itemGroup.mcita": "Mcita",
+  "item.mcita.action_card": "法术卡",
+  "item.mcita.wand": "法杖",
+  "wand.mcita.bolt_staff": "闪电法杖",
+
+  "key.mcita.open_wand_gui": "打开法杖",
+
+  "item.mcita.spell_light_bullet": "火花弹",
+  "item.mcita.spell_bomb": "炸弹",
+  "item.mcita.spell_burst_2": "二重施法",
+  "item.mcita.spell_critical_hit": "暴击率+",
+  "item.mcita.spell_add_trigger": "添加触发",
+
+  "tooltip.mcita.always_casts": "始终施放",
+  "tooltip.mcita.shuffle": "乱序",
+  "tooltip.mcita.spells_per_cast": "法术数/施放",
+  "tooltip.mcita.cast_delay": "施放延迟",
+  "tooltip.mcita.recharge_time": "充能时间",
+  "tooltip.mcita.mana_max": "法力最大值",
+  "tooltip.mcita.mana_charge_speed": "法力充能速度",
+  "tooltip.mcita.capacity": "容量",
+  "tooltip.mcita.spread": "散射",
+  "tooltip.mcita.speed": "速度"
+}
