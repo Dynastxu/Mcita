@@ -18,3 +18,7 @@ All code written in this project must adhere to the following SOLID principles:
 - **Liskov Substitution Principle (LSP)**: Subtypes must be substitutable for their base types without altering the correctness of the program. Derived classes must not violate the contracts of their base classes.
 - **Interface Segregation Principle (ISP)**: Clients should not be forced to depend on interfaces they do not use. Prefer small, focused interfaces over large, monolithic ones.
 - **Dependency Inversion Principle (DIP)**: Depend on abstractions, not on concretions. High-level modules should not depend on low-level modules; both should depend on abstractions.
+
+## Important Restrictions
+
+**Do NOT run the Minecraft server or client.** These are long-running interactive processes that cannot be stopped programmatically — only the user can manually stop them. Do not execute any Gradle tasks such as `runClient`, `runServer`, or similar that launch the game.
