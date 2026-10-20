@@ -1,8 +1,8 @@
-<p style="text-align: center; font-size: 2em; font-weight: bold;">
-    Mcita
-</p>
+<div align="center">
+    <h1>Mcita</h1>
+</div>
 
-<p style="text-align: center;">
+<p align="center">
     <a href="../LICENSE-LGPLv3">
         <img alt="LGPL v3" src="https://img.shields.io/badge/LICENSE-LGPL%20v3-blue?logo=gnu">
     </a>
@@ -11,7 +11,7 @@
     </a>
 </p>
 
-<p style="text-align: center;">
+<p align="center">
     <a href="https://www.deepseek.com/harness/">
         <img alt="DeepSeek Harness" src="https://img.shields.io/badge/DeepSeek-Harness-1B1B1C?logo=deepseek&logoColor=white&labelColor=5f6df5">
     </a>
@@ -23,7 +23,7 @@
     </a>
 </p>
 
-<p style="text-align: center;">
+<p align="center">
   <a href="../README.md">简体中文</a> ｜
   English
 </p>
