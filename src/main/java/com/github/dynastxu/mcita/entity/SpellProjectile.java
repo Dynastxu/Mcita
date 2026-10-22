@@ -122,25 +122,38 @@ public class SpellProjectile extends Projectile {
         }
 
         setPos(getX() + delta.x, getY() + delta.y, getZ() + delta.z);
-        setDeltaMovement(nextVelocity(profile.motion(), delta));
+        applyPhysics(profile.motion());
     }
 
     /**
-     * Applies the per-tick part of Noita's {@code VelocityComponent}: air drag and
-     * gravity. {@code air_friction} is a per-frame coefficient (0 = vacuum, larger =
-     * more drag, negative = thrust, as used by Accelerating Shot).
+     * Applies the per-tick part of Noita's {@code VelocityComponent}: air drag,
+     * fluid drag and gravity. This mirrors the physics of the previous, field-tested
+     * NoitaCore build exactly.
+     *
+     * <p>{@code air_friction} is a per-frame coefficient (0 = vacuum, larger = more
+     * drag, negative = thrust, as used by Accelerating Shot), so 3 frames per tick
+     * means cubing the per-frame factor. Inside a liquid Noita switches to quadratic
+     * drag instead, scaled by the same coefficient.
      */
-    private static Vec3 nextVelocity(ProjectileProfile.Motion motion, Vec3 velocity) {
-        Vec3 next = velocity;
+    private void applyPhysics(ProjectileProfile.Motion motion) {
+        Vec3 velocity = getDeltaMovement();
         float airFriction = motion.airFriction();
-        if (airFriction != 0f) {
+
+        if (this.isInLiquid()) {
+            float drag = airFriction / 10.5f;
+            velocity = new Vec3(
+                    velocity.x - drag * velocity.x * Math.abs(velocity.x),
+                    velocity.y - drag * velocity.y * Math.abs(velocity.y),
+                    velocity.z - drag * velocity.z * Math.abs(velocity.z));
+        } else if (airFriction != 0f) {
             float perFrame = Math.max(0f, 1f - airFriction / 60f);
-            next = next.scale(perFrame * perFrame * perFrame);
+            velocity = velocity.scale(perFrame * perFrame * perFrame);
         }
+
         if (motion.gravity() != 0f) {
-            next = new Vec3(next.x, next.y - motion.gravity(), next.z);
+            velocity = new Vec3(velocity.x, velocity.y - motion.gravity(), velocity.z);
         }
-        return next;
+        setDeltaMovement(velocity);
     }
 
     @Override
