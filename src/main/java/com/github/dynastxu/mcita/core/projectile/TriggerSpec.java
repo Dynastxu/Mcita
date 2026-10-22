@@ -1,7 +1,9 @@
 package com.github.dynastxu.mcita.core.projectile;
 
+import com.github.dynastxu.mcita.core.component.EntityComponent;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import org.jspecify.annotations.NonNull;
 
 import java.util.Locale;
 
@@ -10,7 +12,12 @@ import java.util.Locale;
  * {@code add_projectile_trigger_*(file, n)}. When the trigger fires, the owning
  * cast session draws {@code drawCount} more cards with {@code instantReload = true}.
  */
-public record TriggerSpec(TriggerMode mode, float delayTicks, int drawCount) {
+public record TriggerSpec(TriggerMode mode, float delayTicks, int drawCount) implements EntityComponent {
+    @Override
+    public @NonNull String type() {
+        return "trigger";
+    }
+
     public enum TriggerMode {
         HIT_WORLD,
         HIT_ENEMY,
