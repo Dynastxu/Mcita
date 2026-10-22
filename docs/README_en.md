@@ -1,6 +1,4 @@
-<div align="center">
-    <h1>Mcita</h1>
-</div>
+<h1 align="center">Mcita</h1>
 
 <p align="center">
     <a href="../LICENSE-LGPLv3">
