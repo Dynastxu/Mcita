@@ -5,8 +5,11 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.resources.Identifier;
 
 /**
- * Cosmetic half of a wand. The Noita source pairs each sprite with grip/tip offsets;
- * the same fields are kept so the generated table imports directly.
+ * Cosmetic half of a wand. {@code model} is the item-model id
+ * ({@code mcita:wand_lc_sc_s}); the legacy texture-path form
+ * ({@code mcita:item/wand_lc_sc_s}) is normalized when the stack is created.
+ * The Noita source pairs each sprite with grip/tip offsets; the same fields are
+ * kept so the generated table imports directly.
  */
 public record WandCosmetic(
         Identifier model,

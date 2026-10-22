@@ -1,0 +1,29 @@
+{
+  "deck": [
+    "mcita:light_bullet",
+    "mcita:light_bullet",
+    "mcita:critical_hit"
+  ],
+  "stats": {
+    "always_cast": [
+      "mcita:light_bullet"
+    ],
+    "cosmetic": {
+      "grip_x": 2.0,
+      "grip_y": 5.0,
+      "model": "mcita:wand_smc_sc_ns",
+      "name": "wand.mcita.quick_staff",
+      "tip_x": 21.0,
+      "tip_y": 5.0
+    },
+    "deck_capacity": 4,
+    "mana_charge_speed": 60.0,
+    "mana_max": 80.0,
+    "reload_ticks": 4.0,
+    "shot_defaults": {
+      "fire_rate_wait": 1.0,
+      "spread_degrees": 3.0
+    },
+    "shuffle_when_empty": true
+  }
+}

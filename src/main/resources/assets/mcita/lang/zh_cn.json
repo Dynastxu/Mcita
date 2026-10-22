@@ -2,9 +2,16 @@
   "itemGroup.mcita": "Mcita",
   "item.mcita.action_card": "法术卡",
   "item.mcita.wand": "法杖",
+  "item.mcita.wand.uninitialized": "未初始化法杖（仅创造模式）",
   "wand.mcita.bolt_staff": "闪电法杖",
+  "wand.mcita.spread_staff": "散射法杖",
+  "wand.mcita.destruction_staff": "毁灭法杖",
+  "wand.mcita.quick_staff": "速射法杖",
 
   "key.mcita.open_wand_gui": "打开法杖",
+
+  "commands.mcita.wand.invalid": "无效的法杖 ID",
+  "commands.mcita.wand.unknown": "未知的预设法杖：%s",
 
   "item.mcita.spell_light_bullet": "火花弹",
   "item.mcita.spell_bomb": "炸弹",

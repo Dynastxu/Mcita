@@ -12,9 +12,9 @@ public final class NoitaValues {
     /** 60 Noita frames per second / 20 Minecraft ticks per second. */
     public static final float FRAMES_PER_TICK = 3f;
     /** One Noita pixel in blocks. Placeholder, needs in-game calibration. */
-    public static final float PIXELS_PER_BLOCK = 0.05f;
+    public static final float PIXELS_PER_BLOCK = 16f / 1.8f;
     /** Noita damage number to Minecraft damage (half-hearts). Placeholder. */
-    public static final float DAMAGE_SCALE = 1f;
+    public static final float DAMAGE_SCALE = 0.2f;
 
     private NoitaValues() {
     }

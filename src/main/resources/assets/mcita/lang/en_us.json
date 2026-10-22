@@ -2,9 +2,16 @@
   "itemGroup.mcita": "Mcita",
   "item.mcita.action_card": "Spell Card",
   "item.mcita.wand": "Wand",
+  "item.mcita.wand.uninitialized": "Uninitialized Wand (Creative Only)",
   "wand.mcita.bolt_staff": "Bolt staff",
+  "wand.mcita.spread_staff": "Spread staff",
+  "wand.mcita.destruction_staff": "Staff of Destruction",
+  "wand.mcita.quick_staff": "Quick staff",
 
   "key.mcita.open_wand_gui": "Open wand",
+
+  "commands.mcita.wand.invalid": "Invalid wand id",
+  "commands.mcita.wand.unknown": "Unknown wand preset: %s",
 
   "item.mcita.spell_light_bullet": "Spark Bolt",
   "item.mcita.spell_bomb": "Bomb",

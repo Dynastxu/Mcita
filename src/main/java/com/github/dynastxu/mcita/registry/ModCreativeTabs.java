@@ -5,6 +5,7 @@ import com.github.dynastxu.mcita.McitaRegistries;
 import com.github.dynastxu.mcita.core.action.Action;
 import com.github.dynastxu.mcita.core.wand.ActionCard;
 import com.github.dynastxu.mcita.item.ActionCardItem;
+import com.github.dynastxu.mcita.item.WandFactory;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -22,7 +23,12 @@ public final class ModCreativeTabs {
                     .title(Component.translatable("itemGroup.mcita"))
                     .icon(() -> new ItemStack(ModItems.ACTION_CARD.get()))
                     .displayItems((parameters, output) -> {
-                        output.accept(ModItems.WAND.get());
+                        parameters.holders()
+                                .lookupOrThrow(McitaRegistries.WAND)
+                                .listElements()
+                                .map(WandFactory::preset)
+                                .forEach(output::accept);
+
                         parameters.holders()
                                 .lookupOrThrow(McitaRegistries.ACTION)
                                 .listElements()

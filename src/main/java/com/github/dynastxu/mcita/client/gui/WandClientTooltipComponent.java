@@ -30,9 +30,9 @@ public class WandClientTooltipComponent extends AbstractStatClientTooltipCompone
     private final int gridHeight;
 
     public WandClientTooltipComponent(@NonNull WandTooltipComponent component) {
-        super(buildStatLines(component.wandData().stats().value()));
+        super(buildStatLines(component.wandData().stats()));
 
-        WandStats stats = component.wandData().stats().value();
+        WandStats stats = component.wandData().stats();
         this.alwaysCasts = new ArrayList<>();
         for (Holder<Action> holder : stats.alwaysCast()) {
             this.alwaysCasts.add(ActionCardItem.stackFor(new ActionCard(holder, Action.INFINITE_USES)));

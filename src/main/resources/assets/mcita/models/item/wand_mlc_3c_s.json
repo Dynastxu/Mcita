@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mcita:item/wand_mlc_3c_s"
+  }
+}

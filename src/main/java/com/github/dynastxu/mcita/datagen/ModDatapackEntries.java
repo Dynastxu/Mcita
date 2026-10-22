@@ -18,6 +18,7 @@ import com.github.dynastxu.mcita.core.projectile.DamageKind;
 import com.github.dynastxu.mcita.core.projectile.ProjectileProfile;
 import com.github.dynastxu.mcita.core.wand.WandCosmetic;
 import com.github.dynastxu.mcita.core.wand.WandStats;
+import com.github.dynastxu.mcita.core.wand.WandTemplate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Registry;
@@ -149,17 +150,62 @@ public final class ModDatapackEntries {
 
     // ---------------------------------------------------------------------- wands
 
-    private static void wands(BootstrapContext<WandStats> context) {
+    private static void wands(BootstrapContext<WandTemplate> context) {
         HolderGetter<Action> actions = context.lookup(McitaRegistries.ACTION);
         Holder<Action> lightBullet = actions.getOrThrow(key(McitaRegistries.ACTION, "light_bullet"));
+        Holder<Action> bomb = actions.getOrThrow(key(McitaRegistries.ACTION, "bomb"));
+        Holder<Action> burst2 = actions.getOrThrow(key(McitaRegistries.ACTION, "burst_2"));
+        Holder<Action> criticalHit = actions.getOrThrow(key(McitaRegistries.ACTION, "critical_hit"));
 
-        context.register(key(McitaRegistries.WAND, "starting_wand"), new WandStats(
-                3, 1, NoitaValues.ticks(24), false, 100f, 30f,
-                List.of(lightBullet, lightBullet),
-                Map.of(ShotStat.FIRE_RATE_WAIT, NoitaValues.ticks(10)),
-                new WandCosmetic(
-                        Mcita.id("item/wand_lc_sc_s"),
-                        "wand.mcita.bolt_staff",
-                        2f, 5f, 21f, 5f)));
+        // Starter preset: the same three cards the old hardcoded starter deck used.
+        context.register(key(McitaRegistries.WAND, "starting_wand"), new WandTemplate(
+                new WandStats(
+                        3, 1, NoitaValues.ticks(24), false, 100f, 30f,
+                        List.of(lightBullet, lightBullet),
+                        Map.of(ShotStat.FIRE_RATE_WAIT, NoitaValues.ticks(10)),
+                        new WandCosmetic(
+                                Mcita.id("wand_lc_sc_s"),
+                                "wand.mcita.bolt_staff",
+                                2f, 5f, 21f, 5f)),
+                List.of(lightBullet, bomb, burst2)));
+
+        context.register(key(McitaRegistries.WAND, "spread_staff"), new WandTemplate(
+                new WandStats(
+                        5, 3, NoitaValues.ticks(36), true, 120f, 40f,
+                        List.of(),
+                        Map.of(
+                                ShotStat.FIRE_RATE_WAIT, NoitaValues.ticks(8),
+                                ShotStat.SPREAD_DEGREES, 8f),
+                        new WandCosmetic(
+                                Mcita.id("wand_mlc_3c_s"),
+                                "wand.mcita.spread_staff",
+                                2f, 5f, 21f, 5f)),
+                List.of(lightBullet, lightBullet, burst2)));
+
+        context.register(key(McitaRegistries.WAND, "destruction_staff"), new WandTemplate(
+                new WandStats(
+                        4, 1, NoitaValues.ticks(90), false, 150f, 20f,
+                        List.of(bomb),
+                        Map.of(
+                                ShotStat.FIRE_RATE_WAIT, NoitaValues.ticks(20),
+                                ShotStat.SPREAD_DEGREES, 2f),
+                        new WandCosmetic(
+                                Mcita.id("wand_of_destruction"),
+                                "wand.mcita.destruction_staff",
+                                2f, 5f, 21f, 5f)),
+                List.of(bomb, lightBullet, criticalHit, burst2)));
+
+        context.register(key(McitaRegistries.WAND, "quick_staff"), new WandTemplate(
+                new WandStats(
+                        4, 1, NoitaValues.ticks(12), true, 80f, 60f,
+                        List.of(lightBullet),
+                        Map.of(
+                                ShotStat.FIRE_RATE_WAIT, NoitaValues.ticks(3),
+                                ShotStat.SPREAD_DEGREES, 3f),
+                        new WandCosmetic(
+                                Mcita.id("wand_smc_sc_ns"),
+                                "wand.mcita.quick_staff",
+                                2f, 5f, 21f, 5f)),
+                List.of(lightBullet, lightBullet, criticalHit)));
     }
 }

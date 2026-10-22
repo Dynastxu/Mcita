@@ -2,7 +2,7 @@ package com.github.dynastxu.mcita;
 
 import com.github.dynastxu.mcita.core.action.Action;
 import com.github.dynastxu.mcita.core.projectile.ProjectileProfile;
-import com.github.dynastxu.mcita.core.wand.WandStats;
+import com.github.dynastxu.mcita.core.wand.WandTemplate;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.neoforged.neoforge.registries.DataPackRegistryEvent;
@@ -14,7 +14,7 @@ import net.neoforged.neoforge.registries.DataPackRegistryEvent;
 public final class McitaRegistries {
     public static final ResourceKey<Registry<Action>> ACTION = key("action");
     public static final ResourceKey<Registry<ProjectileProfile>> PROJECTILE = key("projectile");
-    public static final ResourceKey<Registry<WandStats>> WAND = key("wand");
+    public static final ResourceKey<Registry<WandTemplate>> WAND = key("wand");
 
     private McitaRegistries() {
     }
@@ -26,6 +26,6 @@ public final class McitaRegistries {
     public static void onNewRegistry(DataPackRegistryEvent.NewRegistry event) {
         event.dataPackRegistry(ACTION, Action.CODEC, Action.CODEC);
         event.dataPackRegistry(PROJECTILE, ProjectileProfile.CODEC, ProjectileProfile.CODEC);
-        event.dataPackRegistry(WAND, WandStats.CODEC, WandStats.CODEC);
+        event.dataPackRegistry(WAND, WandTemplate.CODEC, WandTemplate.CODEC);
     }
 }

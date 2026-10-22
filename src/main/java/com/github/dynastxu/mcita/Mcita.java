@@ -1,5 +1,6 @@
 package com.github.dynastxu.mcita;
 
+import com.github.dynastxu.mcita.command.McitaCommands;
 import com.github.dynastxu.mcita.datagen.McitaDataGen;
 import com.github.dynastxu.mcita.registry.ModCreativeTabs;
 import com.github.dynastxu.mcita.registry.ModDataComponents;
@@ -31,6 +32,7 @@ public final class Mcita {
         modBus.addListener(McitaDataGen::gatherData);
 
         NeoForge.EVENT_BUS.addListener(Mcita::onServerStarted);
+        NeoForge.EVENT_BUS.addListener(McitaCommands::register);
 
         LOGGER.info("Mcita loaded");
     }

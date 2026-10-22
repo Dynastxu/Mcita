@@ -1,0 +1,29 @@
+{
+  "deck": [
+    "mcita:bomb",
+    "mcita:light_bullet",
+    "mcita:critical_hit",
+    "mcita:burst_2"
+  ],
+  "stats": {
+    "always_cast": [
+      "mcita:bomb"
+    ],
+    "cosmetic": {
+      "grip_x": 2.0,
+      "grip_y": 5.0,
+      "model": "mcita:wand_of_destruction",
+      "name": "wand.mcita.destruction_staff",
+      "tip_x": 21.0,
+      "tip_y": 5.0
+    },
+    "deck_capacity": 4,
+    "mana_charge_speed": 20.0,
+    "mana_max": 150.0,
+    "reload_ticks": 30.0,
+    "shot_defaults": {
+      "fire_rate_wait": 6.6666665,
+      "spread_degrees": 2.0
+    }
+  }
+}

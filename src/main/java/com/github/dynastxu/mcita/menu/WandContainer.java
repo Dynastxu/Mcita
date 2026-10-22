@@ -23,7 +23,7 @@ public class WandContainer implements Container {
     private final ItemStack wand;
 
     public WandContainer(@Nullable WandData data, ItemStack wand) {
-        this.capacity = data == null ? 0 : Math.max(0, data.stats().value().deckCapacity());
+        this.capacity = data == null ? 0 : Math.max(0, data.stats().deckCapacity());
         this.items = NonNullList.withSize(this.capacity, ItemStack.EMPTY);
         if (data != null) {
             for (Map.Entry<Integer, ActionCard> entry : data.cards().entrySet()) {

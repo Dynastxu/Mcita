@@ -1,9 +1,9 @@
 package com.github.dynastxu.mcita.core.wand;
 
 import com.github.dynastxu.mcita.McitaRegistries;
+import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.core.Holder;
 import net.minecraft.resources.RegistryFixedCodec;
 
 import java.util.HashMap;
@@ -11,11 +11,17 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Persistent wand state: deck contents, pile order, mana and cooldown deadlines.
- * Cooldowns are stored as absolute game times so nothing has to tick every frame.
+ * Persistent wand state: an inline stats snapshot, deck contents, pile order,
+ * mana and cooldown deadlines. Cooldowns are stored as absolute game times so
+ * nothing has to tick every frame.
+ *
+ * <p>The stats are stored inline rather than as a registry holder: a wand is a
+ * unique instance (preset or randomly rolled), so it must not change when a
+ * datapack template is edited. The codec still accepts the old holder-id form
+ * for worlds saved before this change.
  */
 public record WandData(
-        Holder<WandStats> stats,
+        WandStats stats,
         Map<Integer, ActionCard> cards,
         List<Integer> drawPile,
         List<Integer> discardPile,
@@ -49,8 +55,20 @@ public record WandData(
                         return raw;
                     });
 
+    /**
+     * New saves write the full stats object; old saves contain a
+     * {@code mcita:wand} id and are resolved against the template registry.
+     */
+    private static final Codec<WandStats> STATS_CODEC = Codec.either(
+            WandStats.CODEC,
+            RegistryFixedCodec.create(McitaRegistries.WAND)
+    ).xmap(
+            either -> either.map(stats -> stats, template -> template.value().stats()),
+            Either::left
+    );
+
     public static final Codec<WandData> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            RegistryFixedCodec.create(McitaRegistries.WAND).fieldOf("stats").forGetter(WandData::stats),
+            STATS_CODEC.fieldOf("stats").forGetter(WandData::stats),
             CARDS_CODEC.optionalFieldOf("cards", Map.of()).forGetter(WandData::cards),
             Codec.INT.listOf().optionalFieldOf("draw", List.of()).forGetter(WandData::drawPile),
             Codec.INT.listOf().optionalFieldOf("discard", List.of()).forGetter(WandData::discardPile),

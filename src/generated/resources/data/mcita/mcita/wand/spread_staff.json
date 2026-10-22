@@ -1,0 +1,27 @@
+{
+  "deck": [
+    "mcita:light_bullet",
+    "mcita:light_bullet",
+    "mcita:burst_2"
+  ],
+  "stats": {
+    "actions_per_round": 3,
+    "cosmetic": {
+      "grip_x": 2.0,
+      "grip_y": 5.0,
+      "model": "mcita:wand_mlc_3c_s",
+      "name": "wand.mcita.spread_staff",
+      "tip_x": 21.0,
+      "tip_y": 5.0
+    },
+    "deck_capacity": 5,
+    "mana_charge_speed": 40.0,
+    "mana_max": 120.0,
+    "reload_ticks": 12.0,
+    "shot_defaults": {
+      "fire_rate_wait": 2.6666667,
+      "spread_degrees": 8.0
+    },
+    "shuffle_when_empty": true
+  }
+}

@@ -12,9 +12,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Immutable wand template: {@code AbilityComponent} + {@code gun_config} +
- * {@code gunaction_config} from the Noita wand XML. Instances that need per-wand
- * random stats will later wrap this and override {@link #shotDefaults()}.
+ * Immutable wand stats: {@code AbilityComponent} + {@code gun_config} +
+ * {@code gunaction_config} from the Noita wand XML. This record is used both as
+ * a datapack template and as the per-instance snapshot stored in {@link WandData};
+ * random wands build a snapshot directly instead of referencing a template.
  */
 public record WandStats(
         int deckCapacity,

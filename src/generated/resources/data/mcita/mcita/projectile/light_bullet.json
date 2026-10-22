@@ -1,6 +1,6 @@
 {
   "damage": {
-    "amount": 0.12
+    "amount": 0.024
   },
   "lifetime": {
     "random_ticks": 2.3333333,
@@ -8,10 +8,10 @@
   },
   "motion": {
     "air_friction": 1.7,
-    "gravity": 0.025,
+    "gravity": 4.4444447,
     "mass": 0.04,
-    "speed_max": 2.125,
-    "speed_min": 1.875
+    "speed_max": 377.7778,
+    "speed_min": 333.33334
   },
   "render": {
     "additive": true,
