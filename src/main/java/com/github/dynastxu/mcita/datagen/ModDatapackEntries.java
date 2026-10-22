@@ -57,7 +57,7 @@ public final class ModDatapackEntries {
                 new ProjectileProfile.Motion(
                         NoitaValues.speed(750), NoitaValues.speed(850),
                         NoitaValues.gravity(200),
-                        1.7f, 0.04f, 1f, 0, true),
+                        1.7f, 0.04f, 1f, 0, 0.9f, true),
                 new ProjectileProfile.Lifetime(NoitaValues.ticks(40), NoitaValues.ticks(7)),
                 new ProjectileProfile.Damage(NoitaValues.damage(0.12), DamageKind.PROJECTILE, 0f),
                 Optional.empty(),
@@ -69,7 +69,7 @@ public final class ModDatapackEntries {
                 new ProjectileProfile.Motion(
                         NoitaValues.speed(300), NoitaValues.speed(400),
                         NoitaValues.gravity(200),
-                        1.2f, 0.1f, 0.98f, 0, true),
+                        1.2f, 0.1f, 0.98f, 0, 0.9f, true),
                 new ProjectileProfile.Lifetime(NoitaValues.ticks(200), NoitaValues.ticks(10)),
                 new ProjectileProfile.Damage(NoitaValues.damage(0.1), DamageKind.PROJECTILE, 0f),
                 Optional.of(new ProjectileProfile.Explosion(

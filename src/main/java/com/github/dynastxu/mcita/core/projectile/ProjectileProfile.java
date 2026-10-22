@@ -27,6 +27,13 @@ public record ProjectileProfile(
             Render.CODEC.optionalFieldOf("render").forGetter(ProjectileProfile::render)
     ).apply(instance, ProjectileProfile::new));
 
+    /**
+     * Noita's {@code VelocityComponent} plus the motion fields of {@code ProjectileComponent}.
+     * Speeds are blocks per tick, gravity is blocks per tick squared, and
+     * {@code airFriction} keeps Noita's per-frame drag coefficient (0 = no drag,
+     * larger = more drag, negative = thrust). {@code bounces} is the initial bounce
+     * count and {@code bounceEnergy} the velocity kept after each bounce.
+     */
     public record Motion(
             float speedMin,
             float speedMax,
@@ -35,6 +42,7 @@ public record ProjectileProfile(
             float mass,
             float friction,
             int bounces,
+            float bounceEnergy,
             boolean dieOnCollision
     ) {
         public static final Codec<Motion> CODEC = RecordCodecBuilder.create(instance -> instance.group(
@@ -45,6 +53,7 @@ public record ProjectileProfile(
                 Codec.FLOAT.optionalFieldOf("mass", 0.05f).forGetter(Motion::mass),
                 Codec.FLOAT.optionalFieldOf("friction", 1f).forGetter(Motion::friction),
                 Codec.INT.optionalFieldOf("bounces", 0).forGetter(Motion::bounces),
+                Codec.FLOAT.optionalFieldOf("bounce_energy", 0.9f).forGetter(Motion::bounceEnergy),
                 Codec.BOOL.optionalFieldOf("die_on_collision", true).forGetter(Motion::dieOnCollision)
         ).apply(instance, Motion::new));
     }

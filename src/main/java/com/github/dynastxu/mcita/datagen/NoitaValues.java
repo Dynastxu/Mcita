@@ -11,8 +11,8 @@ package com.github.dynastxu.mcita.datagen;
 public final class NoitaValues {
     /** 60 Noita frames per second / 20 Minecraft ticks per second. */
     public static final float FRAMES_PER_TICK = 3f;
-    /** One Noita pixel in blocks. Placeholder, needs in-game calibration. */
-    public static final float PIXELS_PER_BLOCK = 16f / 1.8f;
+    /** One Noita pixel in blocks: the 16 px tall player maps to 1.8 blocks. */
+    public static final float BLOCKS_PER_PIXEL = 1.8f / 16f;
     /** Noita damage number to Minecraft damage (half-hearts). Placeholder. */
     public static final float DAMAGE_SCALE = 0.2f;
 
@@ -26,17 +26,17 @@ public final class NoitaValues {
 
     /** Noita pixels -> Minecraft blocks. */
     public static float blocks(double pixels) {
-        return (float) (pixels * PIXELS_PER_BLOCK);
+        return (float) (pixels * BLOCKS_PER_PIXEL);
     }
 
     /** Noita px/s -> Minecraft blocks per tick. */
     public static float speed(double pixelsPerSecond) {
-        return (float) (pixelsPerSecond * PIXELS_PER_BLOCK / 20.0);
+        return (float) (pixelsPerSecond * BLOCKS_PER_PIXEL / 20.0);
     }
 
     /** Noita px/s^2 -> Minecraft blocks per tick^2. */
     public static float gravity(double pixelsPerSecondSquared) {
-        return (float) (pixelsPerSecondSquared * PIXELS_PER_BLOCK / 400.0);
+        return (float) (pixelsPerSecondSquared * BLOCKS_PER_PIXEL / 400.0);
     }
 
     /** Noita damage -> Minecraft damage. */

@@ -8,10 +8,10 @@
   },
   "motion": {
     "air_friction": 1.7,
-    "gravity": 4.4444447,
+    "gravity": 0.05625,
     "mass": 0.04,
-    "speed_max": 377.7778,
-    "speed_min": 333.33334
+    "speed_max": 4.78125,
+    "speed_min": 4.21875
   },
   "render": {
     "additive": true,
